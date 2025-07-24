@@ -40,7 +40,7 @@ const categories: Category[] = [
     tag: "personal-care",
   },
   {
-    name: "Acesorios de belleza",
+    name: "Accesorios de belleza",
     image: "/categories/accessories.jpg",
     tag: "beauty-accessories",
   },

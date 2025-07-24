@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/catalog", label: "catálogo" }
+  { href: "/catalog", label: "Catálogo" }
 ]
 
 const Header = () => {
