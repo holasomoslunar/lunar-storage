@@ -12,7 +12,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
 }) => {
   return (
     <Link href={`/categories`} className="w-full max-w-xs">
-      <div className="relative bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer group hover:shadow-lg dark:hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+      <div className="relative bg-background rounded-lg shadow-md overflow-hidden cursor-pointer group hover:shadow-lg dark:hover:shadow-xl transition-all duration-300 transform hover:scale-105">
         <div className="relative h-48">
           <Image
             src={category.image}
@@ -24,7 +24,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
           <div className="absolute inset-0 bg-gradient-to-t from-purple-800/50 to-transparent" />
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 text-foreground">
+        <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
           <h3 className="text-lg font-semibold mb-1">{category.name}</h3>
         </div>
       </div>
