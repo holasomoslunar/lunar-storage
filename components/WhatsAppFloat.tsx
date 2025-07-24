@@ -1,20 +1,29 @@
 "use client";
 
-import WhatsApp from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
-import { useState } from "react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import WhatsApp from "./icons/whatsapp";
 
 const WhatsAppFloat = () => {
-  const [isMinimized, setIsMinimized] = useState(true);
-
   return (
     <div className="fixed bottom-4 right-4 z-50">
-      {!isMinimized ? (
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 max-w-sm border animate-in slide-in-from-bottom-2">
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button
+            className="bg-[#25D366] hover:bg-green-600 text-white rounded-full size-10 shadow-lg cursor-pointer"
+            size="icon"
+          >
+            <WhatsApp />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-80" side="top" align="end" sideOffset={8}>
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center text-white">
                 <WhatsApp />
               </div>
               <div>
@@ -22,22 +31,14 @@ const WhatsAppFloat = () => {
                 <p className="text-xs text-green-500">En línea</p>
               </div>
             </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-6 w-6 cursor-pointer"
-              onClick={() => setIsMinimized(true)}
-            >
-              <X className="h-4 w-4" />
-            </Button>
           </div>
-          <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+          <p className="text-sm text-muted-foreground mb-3">
             ¡Hola! 👋 ¿Tienes alguna pregunta sobre nuestros productos de
             belleza? Estamos aquí para ayudarte.
           </p>
           <Button
             asChild
-            className="w-full bg-green-500 hover:bg-green-600 text-white"
+            className="w-full bg-[#25D366] hover:bg-green-600 text-white"
             size="sm"
           >
             <a
@@ -48,18 +49,10 @@ const WhatsAppFloat = () => {
               Iniciar Chat
             </a>
           </Button>
-        </div>
-      ) : (
-        <Button
-          onClick={() => setIsMinimized(false)}
-          className="bg-[#25D366] hover:bg-green-600 text-white rounded-full size-10 shadow-lg cursor-pointer"
-          size="icon"
-        >
-          <WhatsApp />
-        </Button>
-      )}
+        </PopoverContent>
+      </Popover>
     </div>
   );
-}
+};
 
 export default WhatsAppFloat;
