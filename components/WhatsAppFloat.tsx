@@ -16,6 +16,7 @@ const WhatsAppFloat = () => {
           <Button
             className="bg-[#25D366] hover:bg-green-600 text-white rounded-full size-10 shadow-lg cursor-pointer"
             size="icon"
+            aria-label="Iniciar chat por WhatsApp"
           >
             <WhatsApp />
           </Button>
@@ -40,6 +41,7 @@ const WhatsAppFloat = () => {
             asChild
             className="w-full bg-[#25D366] hover:bg-green-600 text-white"
             size="sm"
+            aria-label="Iniciar chat por WhatsApp"
           >
             <a
               href="https://wa.me/+584121898687?text=Hola! Me interesa conocer más sobre sus productos."
