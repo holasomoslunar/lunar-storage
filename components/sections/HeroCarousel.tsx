@@ -28,7 +28,7 @@ const slides: CarouselSlide[] = [
       "Explora nuestro catálogo de maquillaje, cuidado personal y accesorios.",
     cta: "Ver catálogo completo",
     href: "/catalog",
-    backgroundImage: "/slides/photo-1.jpeg",
+    backgroundImage: "/slides/photo-1.jpg",
     backgroundColor: "from-purple-600 via-pink-600 to-purple-800",
   },
   {
