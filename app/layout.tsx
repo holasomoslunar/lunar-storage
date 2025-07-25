@@ -1,11 +1,7 @@
-import Footer from "@/components/sections/Footer";
-import Header from "@/components/sections/Header";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
+import "@/app/globals.css";
 import { ThemeProvider } from "@/providers/theme";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-
 export const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -27,10 +23,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
           {children}
-          <WhatsAppFloat />
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

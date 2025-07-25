@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Product } from "@/types/product";
+import { Metadata } from "next";
 
 const categories = [
   { value: "all", label: "Todos" },
@@ -26,6 +27,11 @@ const placeholderProducts: Product[] = [
   { name: "Producto 3", price: 15.00, category: "Accesorios de belleza", available: true, image: "/products/product2.jpg" },
   { name: "Producto 4", price: 15.00, category: "Maquillaje", available: false, image: "/products/product2.jpg" },
 ]
+
+export const metadata: Metadata = {
+  title: "Lunar Storage | Catálogo",
+};
+
 
 const page = () => {
   return (
