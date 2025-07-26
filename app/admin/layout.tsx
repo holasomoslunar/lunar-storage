@@ -1,3 +1,6 @@
+import AdminHeader from "@/components/sections/AdminHeader";
+import AdminSidebar from "@/components/sections/AdminSidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -13,9 +16,13 @@ export default function AdminLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      Dashboard
-      {children}
-    </>
+    <SidebarProvider>
+      <AdminSidebar />
+      <main className="flex flex-1 flex-col m-4">
+        <AdminHeader />
+
+        <div className="py-4">{children}</div>
+      </main>
+    </SidebarProvider>
   );
 }
