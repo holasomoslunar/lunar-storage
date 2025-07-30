@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Sidebar,
   SidebarContent,
@@ -10,9 +12,11 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { authClient } from "@/lib/auth-client";
 import { LayoutDashboard, LogOut, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const items = [
   {
@@ -28,6 +32,8 @@ const items = [
 ];
 
 const AdminSidebar: React.FC = () => {
+  const router = useRouter();
+
   return (
     <Sidebar>
       <SidebarHeader>
@@ -77,15 +83,23 @@ const AdminSidebar: React.FC = () => {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-          <SidebarMenuButton asChild>
-            <Link href={``}>
-              <LogOut />
-              <span>Cerrar Seccion</span>
-            </Link>
-          </SidebarMenuButton>
+        <SidebarMenuButton
+          onClick={async () => {
+            await authClient.signOut({
+              fetchOptions: {
+                onSuccess: () => {
+                  router.push("/login");
+                },
+              },
+            });
+          }}
+        >
+          <LogOut />
+          <span>Cerrar Seccion</span>
+        </SidebarMenuButton>
       </SidebarFooter>
     </Sidebar>
   );
-}
+};
 
 export default AdminSidebar;
