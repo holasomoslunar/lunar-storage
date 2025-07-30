@@ -42,6 +42,5 @@ next-env.d.ts
 
 /lib/generated/prisma
 
-/lib/generated/prisma
-
-/lib/generated/prisma
+*.sqlite3
+*.db
