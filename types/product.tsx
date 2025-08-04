@@ -1,8 +1,9 @@
 export interface Product {
+  id: string;
   available: boolean;
   name: string;
-  description?: string;
+  description: string | null;
   price: number;
   category: string;
-  image: string;
+  imageUrl: string;
 }
