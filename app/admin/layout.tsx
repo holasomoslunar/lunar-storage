@@ -1,6 +1,7 @@
 import AdminHeader from "@/components/sections/AdminHeader";
 import AdminSidebar from "@/components/sections/AdminSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import { Toaster } from "@/components/ui/sonner";
 import { auth } from "@/lib/auth";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -32,6 +33,8 @@ export default async function AdminLayout({
         <AdminHeader />
 
         <div className="py-4">{children}</div>
+
+        <Toaster richColors />
       </main>
     </SidebarProvider>
   );

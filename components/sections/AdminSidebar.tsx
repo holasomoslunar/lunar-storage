@@ -13,7 +13,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { authClient } from "@/lib/auth-client";
-import { LayoutDashboard, LogOut, ShoppingBag } from "lucide-react";
+import { LayoutDashboard, LogOut } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -23,11 +23,6 @@ const items = [
     title: "Admin",
     url: "",
     icon: LayoutDashboard,
-  },
-  {
-    title: "Productos",
-    url: "products",
-    icon: ShoppingBag,
   },
 ];
 

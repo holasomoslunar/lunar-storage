@@ -14,7 +14,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="relative">
         <div className="relative overflow-hidden rounded-t-lg">
           <Image
-            src="/categories/facial.jpg"
+            src={product.imageUrl}
             alt=""
             width={600}
             height={400}
