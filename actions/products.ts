@@ -47,7 +47,7 @@ export default async function createProduct({
   } catch (error) {
     return { data: null, error };
   } finally {
-    revalidatePath("/admin")
+    revalidatePath("/admin");
   }
 }
 
@@ -78,5 +78,28 @@ export async function deleteProduct(id: string) {
     return { data: null, error };
   } finally {
     revalidatePath("/admin");
+  }
+}
+
+export async function getFilteredProducts({
+  category,
+  query,
+}: {
+  category?: string;
+  query?: string;
+}) {
+  try {
+    const products = await prisma.product.findMany({
+      where: {
+        OR: [
+          { name: { contains: query } },
+          { description: { contains: query } },
+        ],
+        AND: [{ category: { contains: category } }],
+      },
+    });
+    return { data: products, error: null };
+  } catch (error) {
+    return { data: null, error };
   }
 }
