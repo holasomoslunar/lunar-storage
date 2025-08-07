@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
 
 import Instagram from "@/components/icons/instagram";
@@ -6,7 +6,7 @@ import TikTok from "@/components/icons/tiktok";
 import Link from "next/link";
 
 
-const Header = () => {
+const Footer = () => {
   return (
     <footer className="flex w-full items-center justify-between border-t border-border px-4 py-12 shadow-sm">
       <div className="max-w-7xl flex flex-col md:flex-row items-start justify-between w-full mx-auto gap-4">
@@ -46,12 +46,6 @@ const Header = () => {
               <Phone className="w-5 h-5 text-purple-500" />
               <span className="text-foreground/70">+58 412-1898-687</span>
             </div>
-            <div className="flex items-center space-x-3">
-              <MapPin className="w-5 h-5 text-purple-500" />
-              <span className="text-foreground/70">
-                123 Beauty Street, City, ST 12345
-              </span>
-            </div>
           </div>
         </div>
 
@@ -73,4 +67,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Footer;
