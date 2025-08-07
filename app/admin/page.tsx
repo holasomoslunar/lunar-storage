@@ -14,7 +14,7 @@ const page = async () => {
 
   return (
     <div>
-      <div className="p-4 border border-border rounded-lg shadow-sm mb-4 flex justify-between gap-4 items-center">
+      <div className="p-4 border border-border rounded-lg shadow-sm mb-4 flex flex-col md:flex-row justify-between gap-4 items-center">
         <div>
           <h2 className="font-bold text-xl text-foreground">
             Gestion de productos
@@ -26,7 +26,7 @@ const page = async () => {
         <AddProduct />
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <Card>
           <CardContent className="px-4">
             <div className="flex items-center justify-between">

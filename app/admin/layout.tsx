@@ -29,13 +29,11 @@ export default async function AdminLayout({
   return (
     <SidebarProvider>
       <AdminSidebar />
-      <main className="flex flex-1 flex-col m-4">
+      <main className="flex flex-1 flex-col">
         <AdminHeader />
-
-        <div className="py-4">{children}</div>
-
-        <Toaster richColors />
+        <div className="m-4">{children}</div>
       </main>
+      <Toaster richColors />
     </SidebarProvider>
   );
 }
