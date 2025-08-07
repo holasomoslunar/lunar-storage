@@ -9,7 +9,6 @@ interface Props {
 
 const Catalog: React.FC<Props> = async ({ query, category }) => {
   const { data: products } = await getFilteredProducts({ query, category });
-  console.log(products);
   
   return (
     <>
