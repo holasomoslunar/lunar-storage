@@ -83,6 +83,7 @@ model Product {
   imageUrl    String
   category    String
   available   Boolean  @default(true)
+  disabled    Boolean  @default(false)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 

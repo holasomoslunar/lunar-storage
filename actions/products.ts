@@ -30,6 +30,7 @@ export default async function createProduct({
   imageUrl,
   available,
   category,
+  disabled ,
 }: productFormSchema) {
   try {
     const data = await prisma.product.create({
@@ -40,6 +41,7 @@ export default async function createProduct({
         imageUrl,
         available,
         category,
+        disabled ,
       },
     });
 
@@ -95,7 +97,12 @@ export async function getFilteredProducts({
           { name: { contains: query } },
           { description: { contains: query } },
         ],
-        AND: [{ category: { contains: category } }],
+        AND: [
+          { category: { contains: category } },
+          {
+            disabled : { not: true },
+          },
+        ],
       },
     });
     return { data: products, error: null };

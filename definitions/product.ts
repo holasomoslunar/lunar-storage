@@ -10,6 +10,7 @@ export const productFormSchema = z.object({
     "Selecciona una categoría"
   ),
   available: z.boolean(),
+  disabled : z.boolean()
 });
 
 export type productFormSchema = z.infer<typeof productFormSchema>;

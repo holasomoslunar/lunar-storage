@@ -60,6 +60,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
       category: initialData?.category,
       imageUrl: initialData?.imageUrl,
       available: initialData?.available ?? true,
+      disabled : initialData?.disabled  ?? false
     },
   });
   const [pending, setPending] = useState(false);
@@ -67,12 +68,6 @@ const ProductForm: React.FC<ProductFormProps> = ({
   const onSubmit: SubmitHandler<productFormSchema> = async (data) => {    
     try {
       setPending(true);
-      // const { data: product } = await createProduct(data);
-      // if (product) {
-      //   reset();
-      // } else {
-      //   toast.error("Error al crear el producto");
-      // }
       const successed = await onSubmitHandler(data)
       if (mode === "create" && successed) {
         reset();
@@ -192,6 +187,30 @@ const ProductForm: React.FC<ProductFormProps> = ({
                   id="available"
                 />
                 <Label htmlFor="available">Desponible</Label>
+              </div>
+            )}
+          />
+
+          {errors.available && (
+            <span className="text-destructive text-sm" role="alert">
+              {errors.available.message}
+            </span>
+          )}
+        </div>
+
+        <div className="flex items-center gap-2">
+          <Controller
+            name="disabled"
+            control={control}
+            render={({ field }) => (
+              <div className="flex items-center space-x-2">
+                <Checkbox
+                  defaultChecked
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                  id="disabled"
+                />
+                <Label htmlFor="disabled ">Desactivar</Label>
               </div>
             )}
           />
