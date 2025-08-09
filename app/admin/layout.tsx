@@ -4,11 +4,8 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 import { auth } from "@/lib/auth";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-
-export const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Lunar Storage | Dashboard",
