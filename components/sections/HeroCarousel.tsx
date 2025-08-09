@@ -36,7 +36,7 @@ const slides: CarouselSlide[] = [
     subtitle: "Descubre productos diseñados para todo tipo de piel y estilo.",
     cta: "Explorar maquillaje",
     backgroundImage: "/slides/photo-2.jpg",
-    href: "/catalog",
+    href: "/catalog?category=make-up",
     backgroundColor: "from-pink-500 via-purple-500 to-indigo-600",
   },
   {
@@ -44,7 +44,7 @@ const slides: CarouselSlide[] = [
     subtitle: "Sérums, limpiadores y más para una piel sana y radiante.",
     cta: "Ver cuidado de la piel",
     backgroundImage: "/slides/photo-3.jpg",
-    href: "/catalog",
+    href: "/catalog?category=personal-care",
     backgroundColor: "from-rose-500 via-pink-500 to-purple-600",
   },
   {
@@ -53,7 +53,7 @@ const slides: CarouselSlide[] = [
       "Accesorios funcionales y kits ideales para regalar o consentirte.",
     cta: "Ver accesorios",
     backgroundImage: "/slides/photo-4.jpg",
-    href: "/catalog",
+    href: "/catalog?category=beauty-accessories",
     backgroundColor: "from-purple-600 via-violet-600 to-purple-800",
   },
 ];
