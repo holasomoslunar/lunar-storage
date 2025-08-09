@@ -49,6 +49,14 @@ export const columns: ColumnDef<Product>[] = [
     },
   },
   {
+    accessorKey: "disabled",
+    header: "Desactivado",
+    cell: ({ row }) => {
+      const disabled = row.getValue("disabled");
+      return <div>{disabled ? "si" : "no"}</div>;
+    },
+  },
+  {
     id: "actions",
     cell: ({ row }) => {
       const product = row.original;
