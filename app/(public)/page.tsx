@@ -1,7 +1,7 @@
 import CategoryCard from "@/components/CategoryCard";
 import Carousel from "@/components/sections/HeroCarousel";
 import { Category } from "@/types/category";
-import { MessageCircleMore, ShoppingBag, Sparkles, Truck } from "lucide-react";
+import { MessageCircleMore, Sparkles, Truck } from "lucide-react";
 
 const featured = [
   {
@@ -21,11 +21,11 @@ const featured = [
       "Seleccionamos lo mejor en cuidado personal, maquillaje y belleza.",
     icon: Sparkles,
   },
-  {
-    title: " Sistema de apartado sin intereses",
-    description: "Separa tus productos favoritos y págalo en cuotas flexibles.",
-    icon: ShoppingBag,
-  },
+  // {
+  //   title: " Sistema de apartado sin intereses",
+  //   description: "Separa tus productos favoritos y págalo en cuotas flexibles.",
+  //   icon: ShoppingBag,
+  // },
 ];
 
 const categories: Category[] = [
@@ -57,11 +57,14 @@ export default function page() {
             Te ofrecemos más que solo productos
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-8">
             {featured.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div className="text-center" key={index}>
+                <div
+                  className="text-center col-span-1 last:md:col-span-2 last:lg:col-span-1"
+                  key={index}
+                >
                   <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-8 h-8 text-purple-600 dark:text-purple-400" />
                   </div>
